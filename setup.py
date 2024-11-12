@@ -7,7 +7,8 @@ PROD_PACKAGES = [
     'pydantic-settings',
     'uvicorn',
     'numpy',
-    'scikit-learn'
+    'scikit-learn',
+    'aiocache[redis]'
 ]
 
 DEV_PACKAGES = [
