@@ -1,3 +1,4 @@
+import asyncio
 import time
 
 import numpy as np
@@ -75,7 +76,7 @@ def ping():
 
 @app.get('/classify')
 async def classify(query_input: QueryInput, model: KNeighborsClassifier = Depends(k_neighbors_classifier)) -> ClassificationResult:
-    return inference(query_input, model)
+    return await asyncio.to_thread(inference, query_input, model)
 
 
 class AppSettings(BaseSettings):

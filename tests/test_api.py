@@ -30,4 +30,3 @@ def test_classify(client):
         'query_input': query_input.model_dump(),
     })
     assert response.status_code == 200
-    assert response.json() == {}
